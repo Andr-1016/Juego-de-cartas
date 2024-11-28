@@ -1,0 +1,112 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa; /* Fondo más claro y limpio */
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    color: #0077b6; /* Azul vibrante */
+    font-size: 2.5rem; /* Tamaño más grande para mayor impacto */
+    text-shadow: 1px 1px 5px rgba(0, 119, 182, 0.3); /* Sombras sutiles */
+}
+
+.card-board {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    background-color: #00b4d8; /* Azul claro */
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras para profundidad */
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Animación al pasar el cursor */
+}
+
+.card .inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    transform: rotateY(0);
+}
+
+.card.flipped .inner {
+    transform: rotateY(180deg);
+}
+
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Alineado con el contenedor */
+}
+
+.card .front {
+    background-color: #caf0f8; /* Azul pastel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #023e8a; /* Azul oscuro */
+    font-weight: bold;
+}
+
+.card .back {
+    background-color: #90e0ef; /* Azul claro */
+    transform: rotateY(180deg);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Imagen alineada con el borde */
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #0077b6; /* Azul vibrante */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #005f99; /* Azul más oscuro */
+    transform: translateY(-3px); /* Efecto de botón elevado */
+}
+
+.timer {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #0077b6;
+    font-weight: bold;
+}
